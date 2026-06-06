@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# macOS / editor
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+*.swp
+
+# Office lock files
+~$*
