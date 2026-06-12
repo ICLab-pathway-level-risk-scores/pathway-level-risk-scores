@@ -11,11 +11,12 @@
 #   risk_group(s)       = 1 if partial_hazard(s) > msk_partial_hazard_cutoff[cancer]
 #                         else 0
 #
-# Standardization source
-#   All z-scored features (suffix _z) are standardized using mu/sigma
-#   estimated exclusively on the MSK-CHORD training split of the
-#   corresponding cancer. mu/sigma values are stored as
-#   external_validation/zscore_params/<cancer>_zscore_params.csv
+# File contents and standardization source
+#   Fixed beta coefficients, K_c per cancer, transform tags, and
+#   MSK-derived partial-hazard cutoffs are stored in THIS file
+#   (compact_score/compact_score_formula.yaml).
+#   MSK-derived z-score mu/sigma parameters for *_z features are
+#   stored separately in external_validation/zscore_params/<cancer>_zscore_params.csv
 #   and are applied unchanged to MSK held-out test and to GENIE BPC.
 #
 # Feature definitions (per pathway P, gene-set G_P, sample s)
@@ -35,7 +36,7 @@
 #                         a historical code convention and does NOT mean this
 #                         feature is per-pathway; it is a single integer per
 #                         patient summarizing how many of the retained pathways
-#                         are altered. Paper Methods, Supplementary Table S1
+#                         are altered. Paper Methods, Supplementary Table S2
 #                         display name, and ibcga_run_records/ CSVs use the
 #                         reader-friendly form "All-pathway alteration count" /
 #                         "All_Pathway_Alteration_Count" for this same feature.

@@ -18,7 +18,7 @@ Numerical values follow **Supplementary Table S2**.
 
 ## Naming convention
 
-The reader-friendly form `"All-pathway alteration count"` (paper / Table S1
+The reader-friendly form `"All-pathway alteration count"` (paper / Table S2
 / CSV `feature_name_display`) corresponds to the code-level identifier
 `PW_HIT_COUNT` (YAML, scripts). The `PW_` prefix on this global feature
 is a historical code convention; it does not mean per-pathway.

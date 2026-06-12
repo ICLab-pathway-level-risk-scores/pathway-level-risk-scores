@@ -77,7 +77,7 @@ decision_curve_analysis/
 | Figure 2 (fixed β coefficients per cancer)         | `compact_score/` (β from `compact_score_formula.yaml`)                               |
 | Figure 3 (internal validation)                     | `KaplanMeier_plot/`                                                                  |
 | Figure 4 (variant-type ablation)                   | `compact_score/` (β + IBCGA selected-feature ablation)                               |
-| Figure 5 (actionability vs aggressiveness)         | (analysis script in `analyses/`)                                                     |
+| Figure 5 (actionability vs aggressiveness)         | (OncoKB-annotated alteration + nested-model comparison; analysis script not redistributed) |
 | Figure 6 (external validation)                     | `external_validation/`                                                               |
 | Figure 7 (decision-curve + clinical utility)       | `decision_curve_analysis/clinical_utility_5features.py`                              |
 | Supp Table S1 (cohort construction)                | `preprocessing/`                                                                     |
