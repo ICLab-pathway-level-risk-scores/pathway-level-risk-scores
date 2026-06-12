@@ -1,13 +1,6 @@
 # External Validation: §4.2 3-Feature Risk Score (5 Cancers, Best Cohort Each)
 
-## Methodology — which logic was used?
 
-**This validation uses `km_3feature_vs_hitcount` logic (cohort-internal rank quantiles).**
-
-| Logic | Cut-point source | Used here? |
-|-------|------------------|:---:|
-| `km_3feature_vs_hitcount` | external cohort's own rank quantile, `pd.qcut(values.rank, q=q)` | ✅ |
-| `km_3feature_vs_hitcount_train_thresholds` | MSK-CHORD train-set quantile cuts applied to test | ❌ |
 
 **MSK partial hazard cutoffs** (BRCA 0.980 / LUAD 1.001 / PAAD 0.948 / PRAD 0.918 / CRC 0.953) are reported as a **secondary** binary high/low row labelled `MSK_cutoff` in each summary CSV, but the primary Q2/Q3/Q4 KM use cohort-internal quantiles.
 
