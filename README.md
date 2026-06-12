@@ -45,18 +45,22 @@ reference_algorithms/
     README_OAX.md
 
 external_validation/
-    genie_bpc_validation.py         # GENIE BPC no-refit external Cox
+    genie_bpc_validation.py         # GENIE BPC no-refit external Cox (Table 4)
     zscore_params/                  # MSK-derived μ/σ per cancer
-    README.md                       # reproduction map for Table 4, Figure 4,
-                                    # Supplementary Table S4, Supp Figure S12
+    scripts/
+        external_combined_figures.py    # Figure 4 panels, Supp Figure S12
+        genie_bpc_sensitivity_cox.py    # Supp Table S4 (OS-anchor sensitivity)
+        figure_style.py                 # shared matplotlib styling
+    README.md
 
 KaplanMeier_plot/
     5feature_km.py                  # risk-stratified Kaplan–Meier curves
 
 decision_curve_analysis/
-    clinical_utility_5features.py   # decision-curve + calibration analysis
-    README.md                       # reproduction map for Table 3, Figure 7,
-                                    # Supp Figure S6
+    clinical_utility_5features.py   # Figure 7, Supp Figure S6 (DCA + calibration)
+    run_clinical_simulation.py      # Table 3 (trial enrichment, MDT referral,
+                                    # fixed-cutoff drift)
+    README.md
 ```
 
 ---
