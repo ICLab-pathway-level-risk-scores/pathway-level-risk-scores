@@ -32,17 +32,17 @@ compact_score/
                                     # MSK-derived partial-hazard cutoffs
 
 ibcga_run_records/
-    <cancer>_30run_selected_features.csv    # per-run selected non-fixed features
+    <cancer>_30run_selected_features.csv    # per-run selected features
     cv_cindex_by_run.csv                    # per-run cross-validated C-index
     feature_selection_frequency_summary.csv # aggregate selection statistics
                                             # (mirrors Supplementary Table S1)
     final_feature_selection_decision.csv    # final compact features per cancer
-    README.md                               # schemas, naming conventions, caveats
+    README.md
 
 reference_algorithms/
-    oax_binary_reference.py         # fixed-K binary OAX reference implementation
+    oax_binary_reference.py         # OAX reference implementation
                                     # (NOT the full IBCGA engine)
-    README_OAX.md                   # algorithm description and citations
+    README_OAX.md
 
 external_validation/
     genie_bpc_validation.py         # GENIE BPC no-refit external Cox

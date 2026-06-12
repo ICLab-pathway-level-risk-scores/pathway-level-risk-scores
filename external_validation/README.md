@@ -86,21 +86,15 @@ Each script reads from `raw_data/<COHORT>/` (paths in script constants). z-score
 
 ## Reproduction map (manuscript figures/tables)
 
-This folder reproduces the **GENIE BPC institutionally independent external
-validation** (MSK-contributed cases excluded, no refit / no rescaling) reported
-in the main paper, plus auxiliary 5-cohort external validation (§4.2).
+Primary external validation = **no-refit GENIE BPC** (MSK-contributed
+cases excluded).
 
-| Manuscript artifact                              | Script (under `scripts/` unless noted) | Output (under `outputs/`)                            |
-|---------------------------------------------------|-----------------------------------------|------------------------------------------------------|
-| Main Table 4 (no-refit external Cox, 5 cancers)   | `genie_bpc_validation.py`               | `GENIE_BPC_*/`                                       |
-| Main Figure 4 (C-index, adjusted HR, calibration) | `genie_bpc_validation.py`, `external_combined_figures.py` | `_GENIE_BPC_combined/`              |
-| Supplementary Table S4 (diagnosis- vs sequencing-anchored OS, sensitivity)        | `genie_bpc_sensitivity_cox.py`, `genie_bpc_seq_origin_os_comparison.py` | `GENIE_BPC_*/sensitivity/`           |
-| Supplementary Figure S12 (external quintile calibration)                          | `external_combined_figures.py`          | `_GENIE_BPC_combined/calibration/`                   |
-| Supplementary Figure S3 (internal rank-quantile KM, replicated externally)        | `genie_bpc_km_combined.py`              | `_GENIE_BPC_combined/km/`                            |
-| Supplementary Figure S4 (treatment-subgroup KM)   | `forest_no_treatment.py`, `forest_genie_bpc_only.py` | `_GENIE_BPC_combined/forest/`               |
-| Auxiliary 5-cohort external validation (§4.2 best result per cancer)              | `metabric_external_validation.py`, `luad_oncosg_validation.py`, `paad_tcga_validation.py`, `tcga_external_validation.py`, `crc_sysucc_validation.py` | `BRCA_metabric/`, `LUAD_oncosg_2020/`, `PAAD_tcga_gdc/`, `PRAD_tcga/`, `CRC_sysucc/` |
+| Manuscript artifact | Script (`scripts/`) |
+|---|---|
+| Table 4 (external Cox, 5 cancers) | `genie_bpc_validation.py` |
+| Figure 4 | `genie_bpc_validation.py`, `external_combined_figures.py` |
+| Supp Table S4 (OS-anchor sensitivity) | `genie_bpc_sensitivity_cox.py` |
+| Supp Figure S12 (quintile calibration) | `external_combined_figures.py` |
 
-All external scripts load fixed β coefficients from
-`../compact_score/compact_score_formula.yaml` and MSK-derived μ/σ from
-`zscore_params/`. No external coefficient fitting or rescaling is performed.
-
+All scripts load fixed β from `../compact_score/compact_score_formula.yaml`
+and MSK-derived μ/σ from `zscore_params/`. No refit, no rescaling.
