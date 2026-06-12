@@ -45,10 +45,10 @@ reference_algorithms/
     README_OAX.md
 
 external_validation/
-    genie_bpc_validation.py         # GENIE BPC no-refit external Cox (Table 4)
+    genie_bpc_validation.py         # GENIE BPC no-refit external Cox (Table 3)
     zscore_params/                  # MSK-derived μ/σ per cancer
     scripts/
-        external_combined_figures.py    # Figure 4 panels, Supp Figure S12
+        external_combined_figures.py    # Figure 6 panels, Supp Figure S12
         genie_bpc_sensitivity_cox.py    # Supp Table S4 (OS-anchor sensitivity)
         figure_style.py                 # shared matplotlib styling
     README.md
@@ -58,7 +58,7 @@ KaplanMeier_plot/
 
 decision_curve_analysis/
     clinical_utility_5features.py   # Figure 7, Supp Figure S6 (DCA + calibration)
-    run_clinical_simulation.py      # Table 3 (trial enrichment, MDT referral,
+    run_clinical_simulation.py      # Table 4 (trial enrichment, MDT referral,
                                     # fixed-cutoff drift)
     README.md
 ```
@@ -71,12 +71,14 @@ decision_curve_analysis/
 |----------------------------------------------------|--------------------------------------------------------------------------------------|
 | Table 1 (cohort construction)                      | `preprocessing/`                                                                     |
 | Table 2 (internal Cox performance)                 | `compact_score/`                                                                     |
-| Table 3 (rank-based clinical decision simulations) | `decision_curve_analysis/run_clinical_simulation.py` |
-| Table 4 (no-refit GENIE BPC external Cox)          | `external_validation/genie_bpc_validation.py`                                        |
+| Table 3 (no-refit GENIE BPC external Cox)          | `external_validation/genie_bpc_validation.py`                                        |
+| Table 4 (rank-based clinical decision simulations) | `decision_curve_analysis/run_clinical_simulation.py`                                 |
 | Figure 1 (overview)                                | (BioRender; no code)                                                                 |
 | Figure 2 (fixed β coefficients per cancer)         | `compact_score/` (β from `compact_score_formula.yaml`)                               |
 | Figure 3 (internal validation)                     | `KaplanMeier_plot/`                                                                  |
-| Figure 4 (external validation)                     | `external_validation/`                                                               |
+| Figure 4 (variant-type ablation)                   | `compact_score/` (β + IBCGA selected-feature ablation)                               |
+| Figure 5 (actionability vs aggressiveness)         | (analysis script in `analyses/`)                                                     |
+| Figure 6 (external validation)                     | `external_validation/`                                                               |
 | Figure 7 (decision-curve + clinical utility)       | `decision_curve_analysis/clinical_utility_5features.py`                              |
 | Supp Table S1 (top-15 IBCGA selection statistics)  | `ibcga_run_records/feature_selection_frequency_summary.csv`                          |
 | Supp Table S3 (cohort construction)                | `preprocessing/`                                                                     |

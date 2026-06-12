@@ -4,8 +4,8 @@
 
 | Manuscript artifact | Script |
 |---|---|
-| Table 4 | `genie_bpc_validation.py` |
-| Figure 4 | `genie_bpc_validation.py`, `scripts/external_combined_figures.py` |
+| Table 3 | `genie_bpc_validation.py` |
+| Figure 6 | `genie_bpc_validation.py`, `scripts/external_combined_figures.py` |
 | Supp Table S4 | `scripts/genie_bpc_sensitivity_cox.py` |
 | Supp Figure S12 | `scripts/external_combined_figures.py` |
 
