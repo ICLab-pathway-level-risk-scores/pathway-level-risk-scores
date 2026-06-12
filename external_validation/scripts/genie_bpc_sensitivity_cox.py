@@ -64,6 +64,7 @@ COHORTS = {  # cohort_key -> (cancer, subdir, features_csv_name)
     "PANC":     ("PAAD", "PANC",     "GENIE_BPC_PANC_pathway_features.csv"),
     "Prostate": ("PRAD", "Prostate", "GENIE_BPC_Prostate_pathway_features.csv"),
 }
+DISPLAY_CANCER = {"BRCA": "IDC"}
 
 # Cancer-specific first-line treatment classification — keyword regex on AGENT/REGIMEN
 TX_CLASS = {
@@ -299,10 +300,11 @@ def plot_forest(rows, title, xlabel, path, label_col, group_col=None):
     df = pd.DataFrame(rows)
     if df.empty:
         return
+    label_values = df[label_col].astype(str).map(lambda x: DISPLAY_CANCER.get(x, x))
     if group_col:
-        df["label"] = df[group_col].astype(str) + " | " + df[label_col].astype(str)
+        df["label"] = df[group_col].astype(str) + " | " + label_values
     else:
-        df["label"] = df[label_col].astype(str)
+        df["label"] = label_values
     df = df.iloc[::-1].reset_index(drop=True)
     fig, ax = plt.subplots(figsize=(8.5, max(2.8, 0.5 * len(df) + 1.6)), constrained_layout=True)
     y = np.arange(len(df))
