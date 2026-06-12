@@ -5,7 +5,7 @@ per cancer, plus aggregate selection-frequency statistics and the final
 compact feature-selection decision used to assemble the deployed
 compact pathway score (`../compact_score/compact_score_formula.yaml`).
 
-Numerical values follow **Supplementary Table S1**.
+Numerical values follow **Supplementary Table S2**.
 
 ## Files
 
@@ -13,7 +13,7 @@ Numerical values follow **Supplementary Table S1**.
 |---|---|
 | `<cancer>_30run_selected_features.csv` | Per-run selected features (one per cancer; 5 cancers) |
 | `cv_cindex_by_run.csv` | Per-(cancer, run) cross-validated Cox C-index |
-| `feature_selection_frequency_summary.csv` | Aggregate selection statistics; mirrors Supplementary Table S1 |
+| `feature_selection_frequency_summary.csv` | Aggregate selection statistics; mirrors Supplementary Table S2 |
 | `final_feature_selection_decision.csv` | Final compact features per cancer; matches the deployed YAML |
 
 ## Naming convention

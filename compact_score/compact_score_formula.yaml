@@ -28,7 +28,7 @@
 #   PW_<P>_any_rate_z     z-score of any_rate_raw using MSK train mu/sigma
 #   PW_<P>_zsum           amp_hit + del_hit + sv_hit + mut_rate_z      (no further z-score)
 #   PW_HIT_COUNT(s)       integer count of pathways in hit_count_pathways[cancer]
-#                         with (mut_rate_raw > 0) or amp_hit or del_hit in s  (0..K)
+#                         with (mut_rate_raw > 0) or amp_hit or del_hit in s  (0..P_c, where P_c is the number of retained pathways for cancer c)
 #                         NOTE: PW_HIT_COUNT is the code-level identifier for the
 #                         global feature referred to in the manuscript as
 #                         "All-pathway alteration count". The PW_ prefix here is
