@@ -58,11 +58,15 @@
 #
 # Cutoffs
 #   msk_partial_hazard_cutoff[cancer]
-#     scalar partial-hazard threshold derived on the MSK training split,
-#     used to define the binary high/low risk group in fixed-cutoff
-#     sensitivity analyses. The primary deployment-oriented analyses use
-#     cohort-internal rank thresholds (cohort median or top quartile),
-#     not this absolute cutoff.
+#     scalar partial-hazard threshold derived on the MSK training split.
+#     Retained in the YAML as a deployment reference and for backward
+#     compatibility with apply_compact_score.py's risk_group_msk_cutoff
+#     column. The primary deployment-oriented analyses use cohort-internal
+#     rank thresholds (cohort median or top quartile) rather than this
+#     transplanted absolute cutoff; external calibration intercepts
+#     (Figure 6c, Table 3) indicate that absolute cutoffs derived on MSK
+#     do not transfer to institutionally independent cohorts without local
+#     baseline-hazard recalibration.
 
 score_definition: "partial_hazard = exp(sum(beta_k * x_k))"
 standardization_source: "MSK-CHORD training split (zscore parameters in external_validation/zscore_params/<cancer>_zscore_params.csv)"
