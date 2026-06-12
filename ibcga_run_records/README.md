@@ -34,10 +34,7 @@ sum (z)}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
   stochastic trajectory of any single IBCGA run. With
   `random_seed = -1`, individual trajectories are not seed-replayable
   by design.
-- Where the archive and Supplementary Table S1 disagree on aggregate
-  counts, the published CSVs (`feature_selection_frequency_summary.csv`
-  and `final_feature_selection_decision.csv`) use the Table S1 values
-  as canonical.
+
 - External GENIE BPC data did not contribute to candidate-feature
   construction, IBCGA feature selection, IBCGA parameter setting, Cox
   coefficient estimation, standardization parameter estimation, or
