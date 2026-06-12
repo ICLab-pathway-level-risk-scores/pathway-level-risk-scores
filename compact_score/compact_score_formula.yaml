@@ -53,7 +53,7 @@
 #
 # Pathway gene sets: TCGA 10-pathway list (Sanchez-Vega et al, Cell 2018),
 # augmented with internal DDR and Chromatin definitions
-# (see preprocessing/build_3flag_enhanced.py).
+# (see preprocessing/build_pathway_features.py).
 #
 # Cutoffs
 #   msk_partial_hazard_cutoff[cancer]

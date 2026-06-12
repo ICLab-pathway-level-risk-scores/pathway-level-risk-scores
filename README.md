@@ -67,7 +67,7 @@ decision_curve_analysis/
 |----------------------------------------------------|--------------------------------------------------------------------------------------|
 | Table 1 (cohort construction)                      | `preprocessing/`                                                                     |
 | Table 2 (internal Cox performance)                 | `compact_score/`                                                                     |
-| Table 3 (rank-based clinical decision simulations) | `decision_curve_analysis/` + `analyses/clinical_simulation/run_clinical_simulation.py` |
+| Table 3 (rank-based clinical decision simulations) | `decision_curve_analysis/run_clinical_simulation.py` |
 | Table 4 (no-refit GENIE BPC external Cox)          | `external_validation/genie_bpc_validation.py`                                        |
 | Figure 1 (overview)                                | (BioRender; no code)                                                                 |
 | Figure 2 (fixed β coefficients per cancer)         | `compact_score/` (β from `compact_score_formula.yaml`)                               |
