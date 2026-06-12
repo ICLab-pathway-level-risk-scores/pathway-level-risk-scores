@@ -67,6 +67,13 @@
 score_definition: "partial_hazard = exp(sum(beta_k * x_k))"
 standardization_source: "MSK-CHORD training split (zscore parameters in external_validation/zscore_params/<cancer>_zscore_params.csv)"
 
+# Cancer key alias
+# The manuscript writes "IDC" (invasive ductal breast carcinoma) for the
+# cohort whose YAML key here is "BRCA". The apply script accepts either
+# spelling; both resolve to the same feature set + coefficients.
+cancer_key_aliases:
+  IDC: BRCA
+
 cancers:
   BRCA:
     K: 5

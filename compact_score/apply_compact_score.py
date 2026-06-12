@@ -24,7 +24,7 @@ import pandas as pd
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-FORMULA = ROOT / "external_validation" / "zscore_params" / "compact_score_formula.yaml"
+FORMULA = ROOT / "compact_score" / "compact_score_formula.yaml"
 
 
 def load_formula(path: Path = FORMULA) -> dict:
@@ -35,9 +35,13 @@ def load_formula(path: Path = FORMULA) -> dict:
 def apply_score(df: pd.DataFrame, cancer: str, formula: dict | None = None
                 ) -> tuple[pd.Series, pd.Series]:
     formula = formula or load_formula()
-    if cancer not in formula["cancers"]:
-        raise ValueError(f"unknown cancer {cancer!r}; valid: {list(formula['cancers'])}")
-    spec = formula["cancers"][cancer]
+    # Resolve manuscript-style cancer code (e.g., "IDC") via cancer_key_aliases
+    aliases = formula.get("cancer_key_aliases", {}) or {}
+    cancer_key = aliases.get(cancer, cancer)
+    if cancer_key not in formula["cancers"]:
+        valid = list(formula["cancers"]) + list(aliases.keys())
+        raise ValueError(f"unknown cancer {cancer!r}; valid: {valid}")
+    spec = formula["cancers"][cancer_key]
     missing = [f["name"] for f in spec["features"] if f["name"] not in df.columns]
     if missing:
         raise KeyError(f"{cancer}: missing features in input df: {missing}")
@@ -63,7 +67,11 @@ def _logrank(df, group):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--cancer", required=True, choices=["BRCA", "LUAD", "PAAD", "PRAD", "CRC"])
+    ap.add_argument("--cancer", required=True,
+                    choices=["BRCA", "IDC", "LUAD", "PAAD", "PRAD", "CRC"],
+                    help="Cancer code. 'IDC' and 'BRCA' are accepted interchangeably; "
+                         "'IDC' matches manuscript naming, 'BRCA' matches TCGA/cBioPortal "
+                         "convention used in the YAML key.")
     ap.add_argument("--features", required=True, type=Path,
                     help="CSV with PW_* feature columns (and optionally OS_MONTHS, Event_OS)")
     ap.add_argument("--out", type=Path, default=None,
@@ -72,7 +80,9 @@ def main():
 
     df = pd.read_csv(args.features)
     formula = load_formula()
-    spec = formula["cancers"][args.cancer]
+    aliases = formula.get("cancer_key_aliases", {}) or {}
+    cancer_key = aliases.get(args.cancer, args.cancer)
+    spec = formula["cancers"][cancer_key]
     linear, risk = apply_score(df, args.cancer, formula)
     df["linear_predictor"] = linear
     df["risk_score"] = risk
