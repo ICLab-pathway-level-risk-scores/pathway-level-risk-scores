@@ -45,9 +45,33 @@ COLORS = {
 }
 
 
+# Canonical feature display names, matching compact_score_formula.yaml and paper main.
+DISPLAY_NAMES = {
+    "PW_HIT_COUNT":            "All-pathway alteration count",
+    "PW_TP53_mut_rate_z":      "TP53 mutation rate (z)",
+    "PW_TP53_any_rate_z":      "TP53 any-alteration rate (z)",
+    "PW_Cell_Cycle_sv_hit":    "Cell cycle SV hit",
+    "PW_Cell_Cycle_zsum":      "Cell cycle alt.-class composite",
+    "PW_Chromatin_zsum":       "Chromatin remodeling alt.-class composite",
+    "PW_Chromatin_sv_hit":     "Chromatin remodeling SV hit",
+    "PW_Chromatin_any_rate_z": "Chromatin remodeling any-alteration rate (z)",
+    "PW_RTK_RAS_amp_hit":      "RTK–RAS amplification hit",
+    "PW_RTK_RAS_mut_rate_z":   "RTK–RAS mutation rate (z)",
+    "PW_RTK_RAS_any_rate_z":   "RTK–RAS any-alteration rate (z)",
+    "PW_NOTCH_any_rate_z":     "NOTCH any-alteration rate (z)",
+    "PW_NRF2_zsum":            "NRF2 alt.-class composite",
+    "PW_TGF_Beta_any_rate_z":  "TGF-β any-alteration rate (z)",
+    "PW_TGF_Beta_amp_hit":     "TGF-β amplification hit",
+    "PW_MYC_any_rate_z":       "MYC any-alteration rate (z)",
+    "PW_WNT_zsum":             "Wnt alt.-class composite",
+    "PW_DDR_zsum":             "DDR alt.-class composite",
+}
+
+
 def display_feature(name: str) -> str:
-    if name == "PW_HIT_COUNT":
-        return "All_Pathway_Alternation_Count"
+    if name in DISPLAY_NAMES:
+        return DISPLAY_NAMES[name]
+    # Fallback for any new feature not yet in the map
     if name.startswith("PW_"):
         name = name[3:]
     if name.endswith("_z"):
@@ -183,7 +207,7 @@ def main():
 
         fig, axes = plt.subplots(1, 3, figsize=(14.5, 4.6))
         fig.suptitle(
-            f"{CANCER_LABEL.get(cancer, cancer)}: Cox risk score Q2/Q3/Q4 KM\n"
+            f"{CANCER_LABEL.get(cancer, cancer)}: Cox risk score 2-/3-/4-quantile KM splits\n"
             f"Features: {display_feature_list(features)}",
             fontsize=11,
             fontweight="bold",
