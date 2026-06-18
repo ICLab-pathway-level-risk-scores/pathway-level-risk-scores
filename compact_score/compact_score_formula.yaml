@@ -15,9 +15,10 @@
 #   Fixed beta coefficients, K_c per cancer, transform tags, and
 #   MSK-derived partial-hazard cutoffs are stored in THIS file
 #   (compact_score/compact_score_formula.yaml).
-#   MSK-derived z-score mu/sigma parameters for *_z features are
-#   stored separately in external_validation/zscore_params/<cancer>_zscore_params.csv
-#   and are applied unchanged to MSK held-out test and to GENIE BPC.
+#   MSK-derived z-score mu/sigma parameters for each `zscore_msk_train`
+#   feature are embedded inline as `zscore_mean` and `zscore_std` under
+#   the corresponding feature entry in this file. They are applied
+#   unchanged to MSK held-out test and to GENIE BPC.
 #
 # Feature definitions (per pathway P, gene-set G_P, sample s)
 #   PW_<P>_amp_hit        binary, 1 if any gene in G_P has CNA >= +2 in s
@@ -69,7 +70,7 @@
 #     baseline-hazard recalibration.
 
 score_definition: "partial_hazard = exp(sum(beta_k * x_k))"
-standardization_source: "MSK-CHORD training split (zscore parameters in external_validation/zscore_params/<cancer>_zscore_params.csv)"
+standardization_source: "MSK-CHORD training split (zscore parameters embedded inline per zscore_msk_train feature)"
 
 # Cancer key alias
 # The manuscript writes "IDC" (invasive ductal breast carcinoma) for the
@@ -84,7 +85,7 @@ cancers:
     hit_count_pathways: [TP53, PI3K, RTK_RAS, Cell_Cycle, Chromatin, DDR, MYC]
     features:
       - {name: PW_HIT_COUNT,           beta:  0.1287982419490632,   transform: integer_count, display: "All-pathway alteration count"}
-      - {name: PW_TP53_mut_rate_z,     beta:  0.19105694078532443,  transform: zscore_msk_train, display: "TP53 mutation rate (z)"}
+      - {name: PW_TP53_mut_rate_z,     beta:  0.19105694078532443,  transform: zscore_msk_train, display: "TP53 mutation rate (z)", zscore_mean: 0.09799004594180701, zscore_std: 0.1085610555095216}
       - {name: PW_Cell_Cycle_sv_hit,   beta: -0.17794528890291722,  transform: binary, display: "Cell cycle SV hit"}
       - {name: PW_Chromatin_zsum,      beta: -0.03768679137824116,  transform: composite_no_zscore, display: "Chromatin remodeling alt.-class sum (z)"}
       - {name: PW_RTK_RAS_amp_hit,     beta: -0.07489920218302375,  transform: binary, display: "RTK–RAS amplification hit"}
@@ -101,10 +102,10 @@ cancers:
     hit_count_pathways: [TP53, PI3K, RTK_RAS, Cell_Cycle, Chromatin, DDR, MYC, NOTCH, NRF2]
     features:
       - {name: PW_HIT_COUNT,           beta:  0.08623152852858001,  transform: integer_count, display: "All-pathway alteration count"}
-      - {name: PW_TP53_any_rate_z,     beta:  0.10802577709803124,  transform: zscore_msk_train, display: "TP53 any-alteration rate (z)"}
-      - {name: PW_NOTCH_any_rate_z,    beta: -0.07991265465222017,  transform: zscore_msk_train, display: "NOTCH any-alteration rate (z)"}
+      - {name: PW_TP53_any_rate_z,     beta:  0.10802577709803124,  transform: zscore_msk_train, display: "TP53 any-alteration rate (z)", zscore_mean: 0.1260680034873583, zscore_std: 0.1170473406848421}
+      - {name: PW_NOTCH_any_rate_z,    beta: -0.07991265465222017,  transform: zscore_msk_train, display: "NOTCH any-alteration rate (z)", zscore_mean: 0.027615518744551, zscore_std: 0.0622433492586812}
       - {name: PW_NRF2_zsum,           beta:  0.11153169994040811,  transform: composite_no_zscore, display: "NRF2 alt.-class sum (z)"}
-      - {name: PW_RTK_RAS_mut_rate_z,  beta: -0.07770157107125727,  transform: zscore_msk_train, display: "RTK–RAS mutation rate (z)"}
+      - {name: PW_RTK_RAS_mut_rate_z,  beta: -0.07770157107125727,  transform: zscore_msk_train, display: "RTK–RAS mutation rate (z)", zscore_mean: 0.0346095763302899, zscore_std: 0.0294336706930631}
     msk_partial_hazard_cutoff: 0.9800001499102232
 
   PAAD:
@@ -113,9 +114,9 @@ cancers:
     features:
       - {name: PW_HIT_COUNT,             beta:  0.06920342988949085,  transform: integer_count, display: "All-pathway alteration count"}
       - {name: PW_RTK_RAS_amp_hit,       beta:  0.2549434141016316,   transform: binary, display: "RTK–RAS amplification hit"}
-      - {name: PW_TP53_mut_rate_z,       beta:  0.05478694862514556,  transform: zscore_msk_train, display: "TP53 mutation rate (z)"}
-      - {name: PW_TGF_Beta_any_rate_z,   beta: -0.020956985010307367, transform: zscore_msk_train, display: "TGF-β any-alteration rate (z)"}
-      - {name: PW_MYC_any_rate_z,        beta:  0.060290969966127136, transform: zscore_msk_train, display: "MYC any-alteration rate (z)"}
+      - {name: PW_TP53_mut_rate_z,       beta:  0.05478694862514556,  transform: zscore_msk_train, display: "TP53 mutation rate (z)", zscore_mean: 0.1658894230769231, zscore_std: 0.0942741557081867}
+      - {name: PW_TGF_Beta_any_rate_z,   beta: -0.020956985010307367, transform: zscore_msk_train, display: "TGF-β any-alteration rate (z)", zscore_mean: 0.07448717948717939, zscore_std: 0.1056510989896001}
+      - {name: PW_MYC_any_rate_z,        beta:  0.060290969966127136, transform: zscore_msk_train, display: "MYC any-alteration rate (z)", zscore_mean: 0.0146474358974358, zscore_std: 0.0595458167775394}
     msk_partial_hazard_cutoff: 0.9711631065500346
 
   PRAD:
@@ -134,7 +135,7 @@ cancers:
     features:
       - {name: PW_HIT_COUNT,              beta:  0.0017846181549948435, transform: integer_count, display: "All-pathway alteration count"}
       - {name: PW_DDR_zsum,               beta: -0.11581336686061387,   transform: composite_no_zscore, display: "DDR alt.-class sum (z)"}
-      - {name: PW_RTK_RAS_any_rate_z,     beta:  0.036118379303230565,  transform: zscore_msk_train, display: "RTK–RAS any-alteration rate (z)"}
+      - {name: PW_RTK_RAS_any_rate_z,     beta:  0.036118379303230565,  transform: zscore_msk_train, display: "RTK–RAS any-alteration rate (z)", zscore_mean: 0.0440129927986226, zscore_std: 0.0604518175464659}
       - {name: PW_TGF_Beta_amp_hit,       beta:  0.7813980789578783,    transform: binary, display: "TGF-β amplification hit"}
-      - {name: PW_Chromatin_any_rate_z,   beta: -0.17962509718283623,   transform: zscore_msk_train, display: "Chromatin remodeling any-alteration rate (z)"}
+      - {name: PW_Chromatin_any_rate_z,   beta: -0.17962509718283623,   transform: zscore_msk_train, display: "Chromatin remodeling any-alteration rate (z)", zscore_mean: 0.0456177839656163, zscore_std: 0.092997233223395}
     msk_partial_hazard_cutoff: 1.0786901029340799
