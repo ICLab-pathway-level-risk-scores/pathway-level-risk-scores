@@ -32,6 +32,14 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 CANCER_ORDER = ["BRCA", "LUAD", "PAAD", "PRAD", "CRC"]
 CANCER_LABEL = {"BRCA": "IDC", "LUAD": "LUAD", "PAAD": "PAAD",
                 "PRAD": "PRAD", "CRC": "CRC"}
+DEFAULT_LABEL_OFFSET = (6, 6)
+LABEL_OFFSETS = {
+    # Dense panels need labels nudged away from the quintile markers.
+    "LUAD": {"Q3": (-8, 6)},
+    "CRC": {"Q2": (-10, 8), "Q3": (8, -12), "Q4": (8, -12), "Q5": (8, 6)},
+    "PAAD": {"Q1": (8, -12), "Q5": (8, -2)},
+    "PRAD": {"Q1": (6, 8), "Q2": (6, -12), "Q4": (6, -12)},
+}
 
 
 def plot_calibration():
@@ -40,7 +48,11 @@ def plot_calibration():
         print(f"missing {p}")
         return
     df = pd.read_csv(p)
-    cohorts = df["cohort"].drop_duplicates().tolist()
+    cohort_order = df[["cohort", "cancer"]].drop_duplicates().copy()
+    cohort_order["sort_key"] = cohort_order["cancer"].map(
+        {c: i for i, c in enumerate(CANCER_ORDER)}
+    )
+    cohorts = cohort_order.sort_values(["sort_key", "cohort"])["cohort"].tolist()
     ncols = min(4, len(cohorts))
     nrows = int(np.ceil(len(cohorts) / ncols))
     fig, axes = plt.subplots(nrows, ncols, figsize=(3.5 * ncols, 3.5 * nrows),
@@ -54,12 +66,15 @@ def plot_calibration():
         ax.plot([0, 1], [0, 1], "k--", linewidth=0.8)
         ax.scatter(sub["mean_predicted_event"], sub["observed_event"], s=55, color="#1d3d7b")
         for _, r in sub.iterrows():
+            dx, dy = LABEL_OFFSETS.get(cancer, {}).get(r["q"], DEFAULT_LABEL_OFFSET)
             ax.annotate(r["q"], (r["mean_predicted_event"], r["observed_event"]),
-                        fontsize=8, xytext=(4, 4), textcoords="offset points")
+                        fontsize=8, xytext=(dx, dy), textcoords="offset points",
+                        ha="left" if dx >= 0 else "right",
+                        va="bottom" if dy >= 0 else "top")
         lim = max(sub["mean_predicted_event"].max(), sub["observed_event"].max()) + 0.07
         ax.set_xlim(0, lim); ax.set_ylim(0, lim)
-        ax.set_xlabel(f"Predicted event @ {t}m")
-        ax.set_ylabel(f"Observed event @ {t}m")
+        ax.set_xlabel(f"Predicted event at {t} months")
+        ax.set_ylabel(f"Observed event at {t} months")
         ax.set_title(CANCER_LABEL.get(cancer, cancer), fontsize=10)
         ax.grid(alpha=0.2)
     for j in range(len(cohorts), len(axes)):
