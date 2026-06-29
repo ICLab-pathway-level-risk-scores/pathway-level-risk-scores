@@ -82,9 +82,11 @@ The fixed Cox formula is documented in
 `compact_score/compact_score_formula.yaml`:
 
 ```
-linear_predictor(s) = Σ  β_i · feature_i(s)
-risk_score(s)       = exp(linear_predictor(s))
+score(s) = exp( Σ_k β_k · x_k(s) )
 ```
+
+This is the **partial-hazard score** from the Cox model
+(paper terminology; see Supplementary Table S4).
 
 - β coefficients are MSK-derived and **not refit** in external cohorts.
 - Feature z-scoring uses MSK-derived μ/σ stored under

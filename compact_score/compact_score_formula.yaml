@@ -5,10 +5,9 @@
 # and are applied without refitting or rescaling to internal MSK test sets
 # and the institutionally independent GENIE BPC external cohorts.
 #
-# Score definition
-#   linear_predictor(s) = sum_k ( beta_k * x_k(s) )
-#   partial_hazard(s)   = exp( linear_predictor(s) )            # = "risk_score"
-#   risk_group(s)       = 1 if partial_hazard(s) > msk_partial_hazard_cutoff[cancer]
+# Score definition (paper "compact pathway score" / Supp Table S4)
+#   score(s)            = exp( sum_k ( beta_k * x_k(s) ) )      # = "partial hazard"
+#   risk_group(s)       = 1 if score(s) > msk_partial_hazard_cutoff[cancer]
 #                         else 0
 #
 # File contents and standardization source
@@ -69,7 +68,7 @@
 #     do not transfer to institutionally independent cohorts without local
 #     baseline-hazard recalibration.
 
-score_definition: "partial_hazard = exp(sum(beta_k * x_k))"
+score_definition: "score = exp(sum(beta_k * x_k))   # paper: compact pathway score (partial hazard)"
 standardization_source: "MSK-CHORD training split (zscore parameters embedded inline per zscore_msk_train feature)"
 
 # Cancer key alias

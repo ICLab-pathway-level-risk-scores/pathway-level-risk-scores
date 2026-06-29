@@ -3,10 +3,12 @@
 
 Two entry points:
   1. ``apply_score(df, cancer)`` — given a DataFrame already containing the
-     PW_* features used by ``cancer``, return ``(linear_predictor, risk_score)``.
+     PW_* features used by ``cancer``, return ``(log_score, risk_score)``,
+     where ``risk_score = exp(log_score) = exp(sum(beta_k * x_k))`` is the
+     paper's compact pathway score (a.k.a. partial hazard).
      Useful when the caller built features with their own pipeline.
   2. CLI: ``python apply_compact_score.py --cancer BRCA --features X.csv``
-     reads a feature CSV, writes a copy with added ``linear_predictor``,
+     reads a feature CSV, writes a copy with added ``log_score``,
      ``risk_score`` and ``risk_group_msk_cutoff`` columns, and prints
      C-index + Kaplan-Meier log-rank p (if OS_MONTHS / Event_OS present).
 
@@ -45,9 +47,9 @@ def apply_score(df: pd.DataFrame, cancer: str, formula: dict | None = None
     missing = [f["name"] for f in spec["features"] if f["name"] not in df.columns]
     if missing:
         raise KeyError(f"{cancer}: missing features in input df: {missing}")
-    linear = sum(float(f["beta"]) * df[f["name"]] for f in spec["features"])
-    risk = np.exp(linear)
-    return linear, risk
+    log_score = sum(float(f["beta"]) * df[f["name"]] for f in spec["features"])
+    risk = np.exp(log_score)
+    return log_score, risk
 
 
 def _cindex(t, score, e):
@@ -83,8 +85,8 @@ def main():
     aliases = formula.get("cancer_key_aliases", {}) or {}
     cancer_key = aliases.get(args.cancer, args.cancer)
     spec = formula["cancers"][cancer_key]
-    linear, risk = apply_score(df, args.cancer, formula)
-    df["linear_predictor"] = linear
+    log_score, risk = apply_score(df, args.cancer, formula)
+    df["log_score"] = log_score
     df["risk_score"] = risk
     df["risk_group_msk_cutoff"] = (risk > float(spec["msk_partial_hazard_cutoff"])).astype(int)
 
