@@ -15,7 +15,6 @@ The compact scores were derived from MSK-CHORD 2024 (BRCA, LUAD, PAAD,
 PRAD, CRC) and validated on independent GENIE BPC cohorts **without
 refitting coefficients or rescaling features**.
 
----
 
 ## Repository structure
 
