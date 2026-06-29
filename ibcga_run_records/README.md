@@ -29,10 +29,10 @@ composite}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
 / mut_rate_z / any_rate_z / zsum}` in code form.
 
 `feature_selection_frequency_summary.csv` columns:
-- `mean_main_effect` keeps the signed orthogonal-array main-effect estimate
-  used for IBCGA ranking.
-- `mean_abs_main_effect` is the magnitude shown as "Mean main effect" in
-  the published Supplementary Table S2 (rendered with a leading `+`).
+- `mean_abs_main_effect` matches the "Mean main effect" magnitude shown
+  in the published Supplementary Table S2 (rendered with a leading `+`).
+- `mean_main_effect` is the same magnitude with the sign of the
+  orthogonal-array main-effect estimate preserved.
 - The earlier `sign_stability` column has been removed; it was dropped
   from Supplementary Table S2 in the published version.
 
