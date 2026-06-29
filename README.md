@@ -62,10 +62,6 @@ decision_curve_analysis/
     README.md
 ```
 
----
-
-
----
 
 ## Data access
 
