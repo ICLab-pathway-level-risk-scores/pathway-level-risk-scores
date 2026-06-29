@@ -25,8 +25,16 @@ is a historical code convention; it does not mean per-pathway.
 
 Per-pathway features follow `<Pathway> {amplification hit / deletion hit
 / SV hit / mutation rate (z) / any-alteration rate (z) / alt.-class
-sum (z)}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
+composite}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
 / mut_rate_z / any_rate_z / zsum}` in code form.
+
+`feature_selection_frequency_summary.csv` columns:
+- `mean_main_effect` keeps the signed orthogonal-array main-effect estimate
+  used for IBCGA ranking.
+- `mean_abs_main_effect` is the magnitude shown as "Mean main effect" in
+  the published Supplementary Table S2 (rendered with a leading `+`).
+- The earlier `sign_stability` column has been removed; it was dropped
+  from Supplementary Table S2 in the published version.
 
 ## Caveats
 

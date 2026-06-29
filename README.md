@@ -48,7 +48,7 @@ external_validation/
     genie_bpc_validation.py         # GENIE BPC no-refit external Cox (Table 3)
     zscore_params/                  # MSK-derived μ/σ per cancer
     scripts/
-        external_combined_figures.py    # Figure 6 panels, Supp Figure S12
+        external_combined_figures.py    # Figure 6 panels, Supp Figure S11
         genie_bpc_sensitivity_cox.py    # Supp Table S5 (OS-anchor sensitivity)
         figure_style.py                 # shared matplotlib styling
     README.md
@@ -57,7 +57,7 @@ KaplanMeier_plot/
     5feature_km.py                  # risk-stratified Kaplan–Meier curves
 
 decision_curve_analysis/
-    clinical_utility_5features.py   # Figure 7, Supp Figure S4 (DCA + calibration)
+    clinical_utility_5features.py   # Figure 7, Supp Figure S3 (DCA + calibration)
     run_clinical_simulation.py      # Table 4 (trial enrichment, MDT referral,
                                     # fixed-cutoff drift)
     README.md
@@ -86,10 +86,9 @@ decision_curve_analysis/
 | Supp Table S4 (final compact Cox score formulas)   | `compact_score/compact_score_formula.yaml`                                           |
 | Supp Table S5 (GENIE BPC OS-anchor sensitivity)    | `external_validation/scripts/genie_bpc_sensitivity_cox.py`                           |
 | Supp Table S6 (IBCGA per-cancer parameters)        | (parameters documented; see `ibcga_run_records/README.md`)                           |
-| Supp Figure S1 (IBCGA vs LASSO-Cox baseline)       | `ibcga_run_records/cv_cindex_by_run.csv`                                             |
-| Supp Figure S2 (post-IBCGA q=1..10 sensitivity)    | `ibcga_run_records/feature_selection_frequency_summary.csv` + Cox refit              |
-| Supp Figure S4 (DCA per cancer)                    | `decision_curve_analysis/clinical_utility_5features.py`                              |
-| Supp Figure S12 (external quintile calibration)    | `external_validation/scripts/external_combined_figures.py`                           |
+| Supp Figure S1 (post-IBCGA q=1..10 sensitivity)    | `ibcga_run_records/feature_selection_frequency_summary.csv` + Cox refit              |
+| Supp Figure S3 (DCA per cancer)                    | `decision_curve_analysis/clinical_utility_5features.py`                              |
+| Supp Figure S11 (external quintile calibration)    | `external_validation/scripts/external_combined_figures.py`                           |
 
 ---
 

@@ -87,7 +87,7 @@ cancers:
       - {name: PW_HIT_COUNT,           beta:  0.1287982419490632,   transform: integer_count, display: "All-pathway alteration count"}
       - {name: PW_TP53_mut_rate_z,     beta:  0.19105694078532443,  transform: zscore_msk_train, display: "TP53 mutation rate (z)", zscore_mean: 0.09799004594180701, zscore_std: 0.1085610555095216}
       - {name: PW_Cell_Cycle_sv_hit,   beta: -0.17794528890291722,  transform: binary, display: "Cell cycle SV hit"}
-      - {name: PW_Chromatin_zsum,      beta: -0.03768679137824116,  transform: composite_no_zscore, display: "Chromatin remodeling alt.-class sum (z)"}
+      - {name: PW_Chromatin_zsum,      beta: -0.03768679137824116,  transform: composite_no_zscore, display: "Chromatin remodeling alt.-class composite"}
       - {name: PW_RTK_RAS_amp_hit,     beta: -0.07489920218302375,  transform: binary, display: "RTK–RAS amplification hit"}
     msk_partial_hazard_cutoff: 0.985345270579853
     msk_train_cindex: null
@@ -104,7 +104,7 @@ cancers:
       - {name: PW_HIT_COUNT,           beta:  0.08623152852858001,  transform: integer_count, display: "All-pathway alteration count"}
       - {name: PW_TP53_any_rate_z,     beta:  0.10802577709803124,  transform: zscore_msk_train, display: "TP53 any-alteration rate (z)", zscore_mean: 0.1260680034873583, zscore_std: 0.1170473406848421}
       - {name: PW_NOTCH_any_rate_z,    beta: -0.07991265465222017,  transform: zscore_msk_train, display: "NOTCH any-alteration rate (z)", zscore_mean: 0.027615518744551, zscore_std: 0.0622433492586812}
-      - {name: PW_NRF2_zsum,           beta:  0.11153169994040811,  transform: composite_no_zscore, display: "NRF2 alt.-class sum (z)"}
+      - {name: PW_NRF2_zsum,           beta:  0.11153169994040811,  transform: composite_no_zscore, display: "NRF2 alt.-class composite"}
       - {name: PW_RTK_RAS_mut_rate_z,  beta: -0.07770157107125727,  transform: zscore_msk_train, display: "RTK–RAS mutation rate (z)", zscore_mean: 0.0346095763302899, zscore_std: 0.0294336706930631}
     msk_partial_hazard_cutoff: 0.9800001499102232
 
@@ -125,8 +125,8 @@ cancers:
     features:
       - {name: PW_HIT_COUNT,             beta:  0.170726413463327,    transform: integer_count, display: "All-pathway alteration count"}
       - {name: PW_Chromatin_sv_hit,      beta:  0.35349051682934207,  transform: binary, display: "Chromatin remodeling SV hit"}
-      - {name: PW_Cell_Cycle_zsum,       beta:  0.03694751393294625,  transform: composite_no_zscore, display: "Cell cycle alt.-class sum (z)"}
-      - {name: PW_WNT_zsum,              beta: -0.041635671744958185, transform: composite_no_zscore, display: "Wnt alt.-class sum (z)"}
+      - {name: PW_Cell_Cycle_zsum,       beta:  0.03694751393294625,  transform: composite_no_zscore, display: "Cell cycle alt.-class composite"}
+      - {name: PW_WNT_zsum,              beta: -0.041635671744958185, transform: composite_no_zscore, display: "Wnt alt.-class composite"}
     msk_partial_hazard_cutoff: 0.943476160003303
 
   CRC:
@@ -134,7 +134,7 @@ cancers:
     hit_count_pathways: [TP53, RTK_RAS, WNT, TGF_Beta, PI3K, DDR, MYC, Chromatin]
     features:
       - {name: PW_HIT_COUNT,              beta:  0.0017846181549948435, transform: integer_count, display: "All-pathway alteration count"}
-      - {name: PW_DDR_zsum,               beta: -0.11581336686061387,   transform: composite_no_zscore, display: "DDR alt.-class sum (z)"}
+      - {name: PW_DDR_zsum,               beta: -0.11581336686061387,   transform: composite_no_zscore, display: "DDR alt.-class composite"}
       - {name: PW_RTK_RAS_any_rate_z,     beta:  0.036118379303230565,  transform: zscore_msk_train, display: "RTK–RAS any-alteration rate (z)", zscore_mean: 0.0440129927986226, zscore_std: 0.0604518175464659}
       - {name: PW_TGF_Beta_amp_hit,       beta:  0.7813980789578783,    transform: binary, display: "TGF-β amplification hit"}
       - {name: PW_Chromatin_any_rate_z,   beta: -0.17962509718283623,   transform: zscore_msk_train, display: "Chromatin remodeling any-alteration rate (z)", zscore_mean: 0.0456177839656163, zscore_std: 0.092997233223395}
