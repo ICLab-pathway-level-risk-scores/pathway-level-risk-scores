@@ -64,7 +64,7 @@ PAAD,8,Chromatin remodeling deletion hit,Chromatin_del_hit,30,1.0,0.0041
 PAAD,9,NOTCH any-alteration rate (z),NOTCH_any_rate,26,0.867,0.0035
 PAAD,10,RTK–RAS any-alteration rate (z),RTK_RAS_any_rate,30,1.0,0.0029
 PAAD,11,Hippo deletion hit,HIPPO_del_hit,30,1.0,0.0028
-PAAD,12,Cell cycle amplification hit,Cell_Cycle_amp_hit,30,1.0,0.0028
+PAAD,12,Cell cycle amplification hit,Cell_Cycle_amp_hit,30,1.0,0.0027
 PAAD,13,NOTCH deletion hit,NOTCH_del_hit,30,1.0,0.0021
 PAAD,14,TGF-β SV hit,TGF_Beta_sv_hit,28,0.933,0.0017
 PAAD,15,RTK–RAS mutation rate (z),RTK_RAS_mut_rate,25,0.833,0.0009
