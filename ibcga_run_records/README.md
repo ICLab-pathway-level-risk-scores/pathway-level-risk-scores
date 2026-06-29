@@ -28,13 +28,31 @@ Per-pathway features follow `<Pathway> {amplification hit / deletion hit
 composite}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
 / mut_rate_z / any_rate_z / zsum}` in code form.
 
-`feature_selection_frequency_summary.csv` columns:
-- `mean_abs_main_effect` matches the "Mean main effect" magnitude shown
-  in the published Supplementary Table S2 (rendered with a leading `+`).
-- `mean_main_effect` is the same magnitude with the sign of the
-  orthogonal-array main-effect estimate preserved.
-- The earlier `sign_stability` column has been removed; it was dropped
-  from Supplementary Table S2 in the published version.
+`feature_selection_frequency_summary.csv` columns: `cancer`, `rank`,
+`feature_name_paper`, `feature_name_display`, `selected_runs_of_30`,
+`selection_frequency`, `mean_main_effect`. The four bookkeeping columns
+that earlier mirrored Supplementary Table S2's "Mean |main effect|" and
+"Sign stability", the per-run `pr_list`, and the redundant
+`feature_name_internal` (still resolvable from `feature_name_display`
+via the `<Pathway>_{amp_hit/del_hit/sv_hit/mut_rate_z/any_rate_z/zsum}`
+convention plus the `PW_` prefix) have been removed to match the
+published table layout. `abs(mean_main_effect)` reproduces the "Mean
+main effect" magnitude printed in Supplementary Table S2; the sign of
+the orthogonal-array main-effect estimate is preserved.
+
+## Per-cancer IBCGA search parameters (Supplementary Table S6)
+
+| Cancer | r_start | r_end | First G_max | Subsequent G_max |
+|---|---|---|---|---|
+| IDC  | 20 | 5  | 300 | 100 |
+| LUAD | 30 | 15 | 300 | 100 |
+| PAAD | 30 | 15 | 300 | 100 |
+| PRAD | 20 | 5  | 300 | 100 |
+| CRC  | 30 | 15 | 300 | 100 |
+
+`r_start` and `r_end` bound the feature-subset size during the bi-objective
+search; `First G_max` is the generation budget for the first IBCGA epoch
+and `Subsequent G_max` applies to refinement epochs.
 
 ## Caveats
 
