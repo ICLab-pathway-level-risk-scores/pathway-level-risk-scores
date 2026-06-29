@@ -30,15 +30,21 @@ composite}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
 
 `feature_selection_frequency_summary.csv` columns: `cancer`, `rank`,
 `feature_name_paper`, `feature_name_display`, `selected_runs_of_30`,
-`selection_frequency`, `mean_main_effect`. The four bookkeeping columns
-that earlier mirrored Supplementary Table S2's "Mean |main effect|" and
+`selection_frequency`, `mean_main_effect`. The bookkeeping columns
+that earlier mirrored Supplementary Table S2's "Mean |main effect|",
 "Sign stability", the per-run `pr_list`, and the redundant
 `feature_name_internal` (still resolvable from `feature_name_display`
 via the `<Pathway>_{amp_hit/del_hit/sv_hit/mut_rate_z/any_rate_z/zsum}`
 convention plus the `PW_` prefix) have been removed to match the
-published table layout. `abs(mean_main_effect)` reproduces the "Mean
-main effect" magnitude printed in Supplementary Table S2; the sign of
-the orthogonal-array main-effect estimate is preserved.
+published table layout. `mean_main_effect` is reported as a magnitude
+(non-negative) so the column matches the "Mean main effect" values
+printed in Supplementary Table S2.
+
+`<cancer>_30run_selected_features.csv` columns: `run_id`, `cancer`,
+`rank_in_run`, `feature_name_display`, `feature_name_internal`,
+`pathway`, `main_effect`. The earlier `abs_main_effect` and
+`effect_sign` columns have been dropped; they were derivable from
+`main_effect` and only inflated the schema.
 
 ## Per-cancer IBCGA search parameters (Supplementary Table S6)
 
