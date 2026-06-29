@@ -65,30 +65,6 @@ decision_curve_analysis/
 
 ---
 
-## Reproduction map
-
-| Manuscript artifact                                | Folder / script(s)                                                                  |
-|----------------------------------------------------|--------------------------------------------------------------------------------------|
-| Table 1 (cohort construction)                      | `preprocessing/`                                                                     |
-| Table 2 (internal Cox performance)                 | `compact_score/`                                                                     |
-| Table 3 (no-refit GENIE BPC external Cox)          | `external_validation/genie_bpc_validation.py`                                        |
-| Table 4 (rank-based clinical decision simulations) | `decision_curve_analysis/run_clinical_simulation.py`                                 |
-| Figure 1 (overview)                                | (BioRender; no code)                                                                 |
-| Figure 2 (fixed β coefficients per cancer)         | `compact_score/` (β from `compact_score_formula.yaml`)                               |
-| Figure 3 (internal validation)                     | `KaplanMeier_plot/`                                                                  |
-| Figure 4 (variant-type ablation)                   | `compact_score/` (β + IBCGA selected-feature ablation)                               |
-| Figure 5 (actionability vs aggressiveness)         | (OncoKB-annotated alteration + nested-model comparison; analysis script not redistributed) |
-| Figure 6 (external validation)                     | `external_validation/`                                                               |
-| Figure 7 (decision-curve + clinical utility)       | `decision_curve_analysis/clinical_utility_5features.py`                              |
-| Supp Table S1 (cohort construction)                | `preprocessing/`                                                                     |
-| Supp Table S2 (top-15 IBCGA selection statistics)  | `ibcga_run_records/feature_selection_frequency_summary.csv`                          |
-| Supp Table S3 (penalized-Cox baseline comparison)  | `ibcga_run_records/` + LASSO/Elastic-Net refit                                       |
-| Supp Table S4 (final compact Cox score formulas)   | `compact_score/compact_score_formula.yaml`                                           |
-| Supp Table S5 (GENIE BPC OS-anchor sensitivity)    | `external_validation/scripts/genie_bpc_sensitivity_cox.py`                           |
-| Supp Table S6 (IBCGA per-cancer parameters)        | (parameters documented; see `ibcga_run_records/README.md`)                           |
-| Supp Figure S1 (post-IBCGA q=1..10 sensitivity)    | `ibcga_run_records/feature_selection_frequency_summary.csv` + Cox refit              |
-| Supp Figure S3 (DCA per cancer)                    | `decision_curve_analysis/clinical_utility_5features.py`                              |
-| Supp Figure S11 (external quintile calibration)    | `external_validation/scripts/external_combined_figures.py`                           |
 
 ---
 
