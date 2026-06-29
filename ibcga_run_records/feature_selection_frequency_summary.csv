@@ -11,16 +11,16 @@ IDC,9,Chromatin remodeling amplification hit,Chromatin_amp_hit,27,0.9,0.0033
 IDC,10,Chromatin remodeling deletion hit,Chromatin_del_hit,25,0.833,0.0029
 IDC,11,Cell cycle any-alteration rate (z),Cell_Cycle_any_rate,30,1.0,0.0023
 IDC,12,RTK–RAS deletion hit,RTK_RAS_del_hit,28,0.933,0.0017
-IDC,13,PI3K any-alteration rate (z),PI3K_any_rate,30,1.0,0.0016
+IDC,13,PI3K any-alteration rate (z),PI3K_any_rate,30,1.0,0.0015
 IDC,14,DDR mutation rate (z),DDR_mut_rate,30,1.0,0.0011
 IDC,15,RTK–RAS SV hit,RTK_RAS_sv_hit,28,0.933,0.0006
-IDC,16,TP53 alt.-class composite,TP53_zsum,4,0.133,0.014
-IDC,17,MYC deletion hit,MYC_del_hit,4,0.133,0.0032
-IDC,18,MYC mutation rate (z),MYC_mut_rate,3,0.1,0.0137
-IDC,19,Chromatin remodeling mutation rate (z),Chromatin_mut_rate,3,0.1,0.006
-IDC,20,RTK–RAS mutation rate (z),RTK_RAS_mut_rate,2,0.067,0.005
-IDC,21,RTK–RAS alt.-class composite,RTK_RAS_zsum,2,0.067,0.001
-IDC,22,Chromatin remodeling any-alteration rate (z),Chromatin_any_rate,1,0.033,0.002
+IDC,16,TP53 alt.-class composite,TP53_zsum,4,0.133,0.0005
+IDC,17,MYC deletion hit,MYC_del_hit,4,0.133,-0.0003
+IDC,18,MYC mutation rate (z),MYC_mut_rate,3,0.1,-0.0014
+IDC,19,Chromatin remodeling mutation rate (z),Chromatin_mut_rate,3,0.1,-0.0024
+IDC,20,RTK–RAS mutation rate (z),RTK_RAS_mut_rate,2,0.067,-0.0051
+IDC,21,RTK–RAS alt.-class composite,RTK_RAS_zsum,2,0.067,-0.0066
+IDC,22,Chromatin remodeling any-alteration rate (z),Chromatin_any_rate,1,0.033,-0.0164
 LUAD,1,All-pathway alteration count,All_Pathway_Alteration_Count,30,1.0,0.0235
 LUAD,2,TP53 any-alteration rate (z),TP53_any_rate,30,1.0,0.0182
 LUAD,3,NOTCH any-alteration rate (z),NOTCH_any_rate,30,1.0,0.0141
@@ -36,23 +36,23 @@ LUAD,12,Chromatin remodeling deletion hit,Chromatin_del_hit,30,1.0,0.0024
 LUAD,13,DDR any-alteration rate (z),DDR_any_rate,30,1.0,0.0018
 LUAD,14,Chromatin remodeling amplification hit,Chromatin_amp_hit,24,0.8,0.0012
 LUAD,15,Cell cycle deletion hit,Cell_Cycle_del_hit,23,0.767,0.0005
-LUAD,16,Cell cycle SV hit,Cell_Cycle_sv_hit,23,0.767,0.0002
-LUAD,17,RTK–RAS deletion hit,RTK_RAS_del_hit,18,0.6,0.0005
-LUAD,18,RTK–RAS SV hit,RTK_RAS_sv_hit,18,0.6,0.0006
-LUAD,19,MYC deletion hit,MYC_del_hit,17,0.567,0.0046
-LUAD,20,PI3K SV hit,PI3K_sv_hit,17,0.567,0.0009
-LUAD,21,NOTCH deletion hit,NOTCH_del_hit,14,0.467,0.0014
-LUAD,22,MYC amplification hit,MYC_amp_hit,12,0.4,0.0008
-LUAD,23,RTK–RAS amplification hit,RTK_RAS_amp_hit,12,0.4,0.0003
-LUAD,24,Cell cycle amplification hit,Cell_Cycle_amp_hit,12,0.4,0.0008
-LUAD,25,TP53 deletion hit,TP53_del_hit,12,0.4,0.0004
-LUAD,26,RTK–RAS alt.-class composite,RTK_RAS_zsum,12,0.4,0.0003
-LUAD,27,Cell cycle any-alteration rate (z),Cell_Cycle_any_rate,7,0.233,0.002
-LUAD,28,MYC SV hit,MYC_sv_hit,6,0.2,0.001
-LUAD,29,Cell cycle alt.-class composite,Cell_Cycle_zsum,6,0.2,0.0003
-LUAD,30,NRF2 mutation rate (z),NRF2_mut_rate,2,0.067,0.0165
-LUAD,31,DDR deletion hit,DDR_del_hit,1,0.033,0.0050
-LUAD,32,DDR amplification hit,DDR_amp_hit,1,0.033,0.003
+LUAD,16,Cell cycle SV hit,Cell_Cycle_sv_hit,23,0.767,0.0004
+LUAD,17,RTK–RAS deletion hit,RTK_RAS_del_hit,18,0.6,0.0003
+LUAD,18,RTK–RAS SV hit,RTK_RAS_sv_hit,18,0.6,0.0001
+LUAD,19,MYC deletion hit,MYC_del_hit,17,0.567,-0.0001
+LUAD,20,PI3K SV hit,PI3K_sv_hit,17,0.567,-0.0003
+LUAD,21,NOTCH deletion hit,NOTCH_del_hit,14,0.467,-0.0006
+LUAD,22,MYC amplification hit,MYC_amp_hit,12,0.4,-0.0010
+LUAD,23,RTK–RAS amplification hit,RTK_RAS_amp_hit,12,0.4,-0.0013
+LUAD,24,Cell cycle amplification hit,Cell_Cycle_amp_hit,12,0.4,-0.0015
+LUAD,25,TP53 deletion hit,TP53_del_hit,12,0.4,-0.0018
+LUAD,26,RTK–RAS alt.-class composite,RTK_RAS_zsum,12,0.4,-0.0021
+LUAD,27,Cell cycle any-alteration rate (z),Cell_Cycle_any_rate,7,0.233,-0.0040
+LUAD,28,MYC SV hit,MYC_sv_hit,6,0.2,-0.0052
+LUAD,29,Cell cycle alt.-class composite,Cell_Cycle_zsum,6,0.2,-0.0057
+LUAD,30,NRF2 mutation rate (z),NRF2_mut_rate,2,0.067,-0.0185
+LUAD,31,DDR deletion hit,DDR_del_hit,1,0.033,-0.0406
+LUAD,32,DDR amplification hit,DDR_amp_hit,1,0.033,-0.0436
 PAAD,1,All-pathway alteration count,All_Pathway_Alteration_Count,30,1.0,0.0218
 PAAD,2,RTK–RAS amplification hit,RTK_RAS_amp_hit,28,0.933,0.0185
 PAAD,3,TP53 mutation rate (z),TP53_mut_rate,28,0.933,0.0145
@@ -68,24 +68,24 @@ PAAD,12,Cell cycle amplification hit,Cell_Cycle_amp_hit,30,1.0,0.0028
 PAAD,13,NOTCH deletion hit,NOTCH_del_hit,30,1.0,0.0021
 PAAD,14,TGF-β SV hit,TGF_Beta_sv_hit,28,0.933,0.0017
 PAAD,15,RTK–RAS mutation rate (z),RTK_RAS_mut_rate,25,0.833,0.0009
-PAAD,16,RTK–RAS SV hit,RTK_RAS_sv_hit,25,0.833,0.0006
-PAAD,17,NOTCH SV hit,NOTCH_sv_hit,20,0.667,0.0023
-PAAD,18,TP53 amplification hit,TP53_amp_hit,20,0.667,0.0008
-PAAD,19,Cell cycle deletion hit,Cell_Cycle_del_hit,13,0.433,0.0038
-PAAD,20,TP53 deletion hit,TP53_del_hit,12,0.4,0.0001
-PAAD,21,Chromatin remodeling alt.-class composite,Chromatin_zsum,11,0.367,0.0006
-PAAD,22,MYC amplification hit,MYC_amp_hit,10,0.333,0.0002
-PAAD,23,MYC deletion hit,MYC_del_hit,9,0.3,0.0012
-PAAD,24,TGF-β mutation rate (z),TGF_Beta_mut_rate,8,0.267,0.0015
-PAAD,25,Chromatin remodeling any-alteration rate (z),Chromatin_any_rate,8,0.267,0.0008
-PAAD,26,RTK–RAS alt.-class composite,RTK_RAS_zsum,5,0.167,0.0014
-PAAD,27,TGF-β alt.-class composite,TGF_Beta_zsum,5,0.167,0.0002
-PAAD,28,NOTCH alt.-class composite,NOTCH_zsum,4,0.133,0.0008
-PAAD,29,Chromatin remodeling amplification hit,Chromatin_amp_hit,3,0.1,0.0033
-PAAD,30,RTK–RAS deletion hit,RTK_RAS_del_hit,3,0.1,0.0013
-PAAD,31,TP53 alt.-class composite,TP53_zsum,2,0.067,0.002
-PAAD,32,Cell cycle alt.-class composite,Cell_Cycle_zsum,2,0.067,0.002
-PAAD,33,TGF-β deletion hit,TGF_Beta_del_hit,2,0.067,0.0010
+PAAD,16,RTK–RAS SV hit,RTK_RAS_sv_hit,25,0.833,0.0008
+PAAD,17,NOTCH SV hit,NOTCH_sv_hit,20,0.667,0.0007
+PAAD,18,TP53 amplification hit,TP53_amp_hit,20,0.667,0.0006
+PAAD,19,Cell cycle deletion hit,Cell_Cycle_del_hit,13,0.433,0.0005
+PAAD,20,TP53 deletion hit,TP53_del_hit,12,0.4,0.0003
+PAAD,21,Chromatin remodeling alt.-class composite,Chromatin_zsum,11,0.367,0.0001
+PAAD,22,MYC amplification hit,MYC_amp_hit,10,0.333,-0.0002
+PAAD,23,MYC deletion hit,MYC_del_hit,9,0.3,-0.0006
+PAAD,24,TGF-β mutation rate (z),TGF_Beta_mut_rate,8,0.267,-0.0010
+PAAD,25,Chromatin remodeling any-alteration rate (z),Chromatin_any_rate,8,0.267,-0.0014
+PAAD,26,RTK–RAS alt.-class composite,RTK_RAS_zsum,5,0.167,-0.0028
+PAAD,27,TGF-β alt.-class composite,TGF_Beta_zsum,5,0.167,-0.0034
+PAAD,28,NOTCH alt.-class composite,NOTCH_zsum,4,0.133,-0.0050
+PAAD,29,Chromatin remodeling amplification hit,Chromatin_amp_hit,3,0.1,-0.0077
+PAAD,30,RTK–RAS deletion hit,RTK_RAS_del_hit,3,0.1,-0.0087
+PAAD,31,TP53 alt.-class composite,TP53_zsum,2,0.067,-0.0145
+PAAD,32,Cell cycle alt.-class composite,Cell_Cycle_zsum,2,0.067,-0.0160
+PAAD,33,TGF-β deletion hit,TGF_Beta_del_hit,2,0.067,-0.0175
 PRAD,1,All-pathway alteration count,All_Pathway_Alteration_Count,30,1.0,0.0258
 PRAD,2,Chromatin remodeling SV hit,Chromatin_sv_hit,28,0.933,0.0192
 PRAD,3,Cell cycle alt.-class composite,Cell_Cycle_zsum,28,0.933,0.0138
@@ -101,13 +101,13 @@ PRAD,12,PI3K deletion hit,PI3K_del_hit,30,1.0,0.0019
 PRAD,13,Cell cycle deletion hit,Cell_Cycle_del_hit,30,1.0,0.0018
 PRAD,14,DDR deletion hit,DDR_del_hit,26,0.867,0.0013
 PRAD,15,DDR any-alteration rate (z),DDR_any_rate,20,0.667,0.0012
-PRAD,16,DDR mutation rate (z),DDR_mut_rate,13,0.433,0.002
+PRAD,16,DDR mutation rate (z),DDR_mut_rate,13,0.433,0.0011
 PRAD,17,Chromatin remodeling mutation rate (z),Chromatin_mut_rate,13,0.433,0.0009
-PRAD,18,DDR alt.-class composite,DDR_zsum,10,0.333,0.0033
-PRAD,19,Wnt deletion hit,WNT_del_hit,9,0.3,0.0086
-PRAD,20,Wnt SV hit,WNT_sv_hit,8,0.267,0.0010
-PRAD,21,Cell cycle mutation rate (z),Cell_Cycle_mut_rate,2,0.067,0.0050
-PRAD,22,DDR SV hit,DDR_sv_hit,1,0.033,0.0
+PRAD,18,DDR alt.-class composite,DDR_zsum,10,0.333,0.0008
+PRAD,19,Wnt deletion hit,WNT_del_hit,9,0.3,0.0006
+PRAD,20,Wnt SV hit,WNT_sv_hit,8,0.267,0.0003
+PRAD,21,Cell cycle mutation rate (z),Cell_Cycle_mut_rate,2,0.067,-0.0003
+PRAD,22,DDR SV hit,DDR_sv_hit,1,0.033,-0.0036
 CRC,1,All-pathway alteration count,All_Pathway_Alteration_Count,30,1.0,0.0228
 CRC,2,DDR alt.-class composite,DDR_zsum,28,0.933,0.0173
 CRC,3,RTK–RAS any-alteration rate (z),RTK_RAS_any_rate,30,1.0,0.0139
@@ -123,20 +123,20 @@ CRC,12,PI3K any-alteration rate (z),PI3K_any_rate,30,1.0,0.0015
 CRC,13,PI3K alt.-class composite,PI3K_zsum,30,1.0,0.0014
 CRC,14,MYC deletion hit,MYC_del_hit,29,0.967,0.0013
 CRC,15,TP53 deletion hit,TP53_del_hit,29,0.967,0.0006
-CRC,16,MYC mutation rate (z),MYC_mut_rate,28,0.933,0.0003
-CRC,17,Chromatin remodeling amplification hit,Chromatin_amp_hit,28,0.933,0.0003
-CRC,18,Wnt amplification hit,WNT_amp_hit,21,0.7,0.0001
-CRC,19,TGF-β any-alteration rate (z),TGF_Beta_any_rate,19,0.633,0.0087
-CRC,20,Chromatin remodeling SV hit,Chromatin_sv_hit,13,0.433,0.0004
-CRC,21,Wnt mutation rate (z),WNT_mut_rate,9,0.3,0.0059
-CRC,22,Wnt any-alteration rate (z),WNT_any_rate,9,0.3,0.005
-CRC,23,MYC alt.-class composite,MYC_zsum,9,0.3,0.0021
-CRC,24,MYC any-alteration rate (z),MYC_any_rate,8,0.267,0.0009
-CRC,25,Wnt SV hit,WNT_sv_hit,7,0.233,0.0017
-CRC,26,TGF-β SV hit,TGF_Beta_sv_hit,4,0.133,0.0030
-CRC,27,PI3K mutation rate (z),PI3K_mut_rate,4,0.133,0.002
-CRC,28,DDR any-alteration rate (z),DDR_any_rate,2,0.067,0.005
-CRC,29,Wnt deletion hit,WNT_del_hit,2,0.067,0.0005
-CRC,30,TP53 mutation rate (z),TP53_mut_rate,1,0.033,0.0020
-CRC,31,TP53 SV hit,TP53_sv_hit,1,0.033,0.0020
-CRC,32,TP53 any-alteration rate (z),TP53_any_rate,1,0.033,0.001
+CRC,16,MYC mutation rate (z),MYC_mut_rate,28,0.933,0.0005
+CRC,17,Chromatin remodeling amplification hit,Chromatin_amp_hit,28,0.933,0.0004
+CRC,18,Wnt amplification hit,WNT_amp_hit,21,0.7,0.0003
+CRC,19,TGF-β any-alteration rate (z),TGF_Beta_any_rate,19,0.633,0.0002
+CRC,20,Chromatin remodeling SV hit,Chromatin_sv_hit,13,0.433,0.0001
+CRC,21,Wnt mutation rate (z),WNT_mut_rate,9,0.3,-0.0002
+CRC,22,Wnt any-alteration rate (z),WNT_any_rate,9,0.3,-0.0005
+CRC,23,MYC alt.-class composite,MYC_zsum,9,0.3,-0.0008
+CRC,24,MYC any-alteration rate (z),MYC_any_rate,8,0.267,-0.0013
+CRC,25,Wnt SV hit,WNT_sv_hit,7,0.233,-0.0019
+CRC,26,TGF-β SV hit,TGF_Beta_sv_hit,4,0.133,-0.0041
+CRC,27,PI3K mutation rate (z),PI3K_mut_rate,4,0.133,-0.0049
+CRC,28,DDR any-alteration rate (z),DDR_any_rate,2,0.067,-0.0112
+CRC,29,Wnt deletion hit,WNT_del_hit,2,0.067,-0.0127
+CRC,30,TP53 mutation rate (z),TP53_mut_rate,1,0.033,-0.0288
+CRC,31,TP53 SV hit,TP53_sv_hit,1,0.033,-0.0318
+CRC,32,TP53 any-alteration rate (z),TP53_any_rate,1,0.033,-0.0348
