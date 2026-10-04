@@ -53,9 +53,10 @@ def plot_calibration():
         {c: i for i, c in enumerate(CANCER_ORDER)}
     )
     cohorts = cohort_order.sort_values(["sort_key", "cohort"])["cohort"].tolist()
-    ncols = min(4, len(cohorts))
+    ncols = min(2, len(cohorts))   # two columns fit a ~160 mm page at >= 8 pt
     nrows = int(np.ceil(len(cohorts) / ncols))
-    fig, axes = plt.subplots(nrows, ncols, figsize=(3.5 * ncols, 3.5 * nrows),
+    # Supplementary page width (~160 mm): keep the grid but size it to the page
+    fig, axes = plt.subplots(nrows, ncols, figsize=(6.3, 2.9 * nrows + 0.4),
                              constrained_layout=True)
     axes = np.array(axes).reshape(-1)
     for i, cohort in enumerate(cohorts):
@@ -75,13 +76,12 @@ def plot_calibration():
         ax.set_xlim(0, lim); ax.set_ylim(0, lim)
         ax.set_xlabel(f"Predicted event at {t} months")
         ax.set_ylabel(f"Observed event at {t} months")
-        ax.set_title(CANCER_LABEL.get(cancer, cancer), fontsize=10)
+        ax.set_title(CANCER_LABEL.get(cancer, cancer), fontsize=9.5)
         ax.grid(alpha=0.2)
     for j in range(len(cohorts), len(axes)):
         axes[j].axis("off")
-    fig.suptitle("GENIE BPC external calibration — compact score quintiles",
-                 fontsize=12, fontweight="bold")
-    fig.savefig(OUT_DIR / "calibration_combined.png", dpi=220)
+    # BMC: the figure title belongs in the manuscript caption, not the artwork
+    fig.savefig(OUT_DIR / "calibration_combined.png", dpi=400)
     fig.savefig(OUT_DIR / "calibration_combined.pdf")
     plt.close(fig)
     print(f"wrote {OUT_DIR / 'calibration_combined.png'}")
@@ -131,7 +131,7 @@ def plot_forest():
         ax.text(xmax, i,
                 f"  HR={r.HR:.2f} ({r.lower95:.2f}–{r.upper95:.2f}), p={r.p:.2g} {sig}",
                 va="center", fontsize=8)
-    fig.savefig(OUT_DIR / "forest_combined.png", dpi=220)
+    fig.savefig(OUT_DIR / "forest_combined.png", dpi=400)
     fig.savefig(OUT_DIR / "forest_combined.pdf")
     plt.close(fig)
     print(f"wrote {OUT_DIR / 'forest_combined.png'}")
