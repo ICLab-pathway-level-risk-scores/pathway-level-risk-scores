@@ -38,7 +38,7 @@ import pandas as pd
 from lifelines.utils import concordance_index
 
 import sys
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT)); sys.path.insert(0, str(ROOT / "scripts"))
 import gene_vs_pathway_headtohead as HH
 from build_3flag_enhanced import parse_10pathway, CANCER_PATHWAYS

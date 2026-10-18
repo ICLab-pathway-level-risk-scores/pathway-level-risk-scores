@@ -36,7 +36,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))   # external_validation/scripts/figure_style.py
 from figure_style import apply_arial_style
 apply_arial_style()
 import numpy as np
@@ -48,7 +48,7 @@ from lifelines.utils import concordance_index
 
 warnings.filterwarnings("ignore")
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_3flag_enhanced import (
     ALIAS_MAP, ALL_PW_KEYS, CHROMATIN_ALL, CHROMATIN_OG, CHROMATIN_TSG,
@@ -57,8 +57,8 @@ from build_3flag_enhanced import (
 
 RAW_BASE = ROOT / "external_validation" / "raw_data" / "GENIE_BPC"
 OUT_BASE = ROOT / "external_validation" / "outputs"
-FORMULA = ROOT / "external_validation" / "zscore_params" / "compact_score_formula.yaml"
-MSK_ZSCORE_DIR = ROOT / "build_3flag_outputs" / "pathonly_3flag_enhanced"
+FORMULA = ROOT / "compact_score" / "compact_score_formula.yaml"
+MSK_ZSCORE_DIR = ROOT / "external_validation" / "zscore_params"   # MSK-train mu/sigma per cancer
 
 # GENIE BPC cohort → (cancer code, ONCOTREE codes, HIT_COUNT pathways)
 COHORTS = {
@@ -118,7 +118,7 @@ def parse_event(s):
 
 
 def load_msk_zscore(cancer):
-    df = pd.read_csv(MSK_ZSCORE_DIR / cancer / f"{cancer}_zscore_params.csv")
+    df = pd.read_csv(MSK_ZSCORE_DIR / f"{cancer}_zscore_params.csv")
     return {row["col"]: (float(row["mean"]), float(row["std"])) for _, row in df.iterrows()}
 
 

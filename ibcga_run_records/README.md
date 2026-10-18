@@ -46,7 +46,7 @@ printed in Supplementary Table S2.
 `effect_sign` columns have been dropped; they were derivable from
 `main_effect` and only inflated the schema.
 
-## Per-cancer IBCGA search parameters (Supplementary Table S6)
+## Per-cancer IBCGA search parameters (Supplementary Table S5)
 
 | Cancer | r_start | r_end | First G_max | Subsequent G_max |
 |---|---|---|---|---|

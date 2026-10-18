@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 D = ROOT / "figures_tables" / "gene_vs_pathway_external"
 try:
     import sys; sys.path.insert(0, str(ROOT / "scripts"))

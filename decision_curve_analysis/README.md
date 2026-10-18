@@ -4,9 +4,8 @@
 
 | Manuscript artifact | Script |
 |---|---|
-| Table 4 (trial-enrichment NNS) | `run_clinical_simulation.py` |
+| Supp Table S7, Supp Figure S13 (trial enrichment) | `run_clinical_simulation.py` |
 | MDT-referral PPV/NPV | `run_clinical_simulation.py` |
-| Figure 7 (decision curve + calibration) | `clinical_utility_5features.py` |
 | Supp Figure S3 (DCA per cancer) | `clinical_utility_5features.py` |
 
 Both scripts load the deployed compact pathway scores from
