@@ -3,7 +3,7 @@
 Code repository for the manuscript:
 
 > **Multi-variant pathway aggregation of sparse targeted-panel alterations for
-> prognostic modeling across five solid tumors.**
+> prognostic modeling in five solid tumors.**
 
 Figure and table numbers below follow this manuscript.
 
