@@ -49,7 +49,7 @@ from sksurv.util import Surv
 from lifelines.utils import concordance_index
 
 import sys
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 from sklearn.model_selection import train_test_split

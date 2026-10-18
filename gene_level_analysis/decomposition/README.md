@@ -1,6 +1,6 @@
 # Constituent-gene decomposition of the compact features
 
-Supports **Figure 7**. Decomposes each cancer's final 4–5 compact features into their
+Supports **Figure 4**. Decomposes each cancer's final 4–5 compact features into their
 constituent genes.
 
 For each feature we report:

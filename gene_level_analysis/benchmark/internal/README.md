@@ -1,6 +1,6 @@
 # Gene-level vs pathway-level benchmark — internal (MSK-CHORD held-out test set)
 
-Supports **Figure 6a** (parsimony–performance comparison). Benchmarks the compact
+Supports **Figure 2a** (parsimony–performance comparison). Benchmarks the compact
 pathway-level score against unaggregated gene-level penalized-Cox models on the same
 MSK-CHORD held-out test set.
 

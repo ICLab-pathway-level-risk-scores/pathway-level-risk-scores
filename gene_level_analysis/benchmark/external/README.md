@@ -1,6 +1,6 @@
 # Gene-level vs pathway-level benchmark — external (GENIE BPC, no refit)
 
-Supports **Figure 6b** (internal-to-external transfer). No-refit external transfer of
+Supports **Figure 2b and Table 2** (internal-to-external transfer). No-refit external transfer of
 gene-level and pathway-level models to the GENIE BPC cohorts.
 
 ## Protocol (matched to the published compact-score external validation)
