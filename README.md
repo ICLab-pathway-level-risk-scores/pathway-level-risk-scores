@@ -51,6 +51,25 @@ external_validation/
         external_combined_figures.py    # external calibration (Supp Figure S11), HR forest
         genie_bpc_sensitivity_cox.py    # Supp Table S4 (OS-anchor sensitivity)
         figure_style.py                 # shared matplotlib styling
+    build_3flag_enhanced.py         # import shim → preprocessing/build_pathway_features.py
+    README.md
+
+gene_level_analysis/
+    scripts/
+        gene_vs_pathway_headtohead.py   # internal gene- vs pathway-level models (MSK held-out)
+        gene_vs_pathway_external.py     # no-refit external transfer to GENIE BPC
+        benchmark_common_coverage.py    # Table 2, Supp Table S6 (common-coverage benchmark)
+        benchmark_bootstrap_table.py    # bootstrap 95% CIs for the benchmark arms
+        panel_coverage_table.py         # GENIE panel-coverage harmonization table
+        plot_gene_vs_pathway_*.py       # Figure 2 panels
+        burden_samemethod_benchmark.py  # Supp Table S11 (burden-only, same-method Elastic-Net)
+        feature_to_gene_traceback.py    # Figure 4 (feature → constituent-gene decomposition)
+        leave_one_gene_out.py           # leave-one-gene-out decomposition
+        build_3flag_enhanced.py         # import shim → preprocessing/build_pathway_features.py
+    benchmark/
+        internal/   external/           # Figure 2, Table 2, Supp Table S6 outputs
+        burden_samemethod/              # Supp Table S11 outputs
+    decomposition/                      # Figure 4 outputs
     README.md
 
 KaplanMeier_plot/
