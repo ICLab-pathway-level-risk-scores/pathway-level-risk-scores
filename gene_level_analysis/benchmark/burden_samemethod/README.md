@@ -1,4 +1,10 @@
-# Burden-only and same-method benchmarks (Supplementary Table S11)
+# Burden-only benchmark (Supplementary Table S11)
+
+Supplementary Table S11 reports only the comparison of the fixed compact score with the burden-only model
+(`compact_fixed - burden_only` rows of `paired_deltaC.csv`; `compact_fixed` and `burden_only` rows of
+`arm_metrics.csv`). The script also computes same-method Elastic-Net comparisons of pathway and gene-level
+features (`pathway_EN_*`, `gene_EN_*`); these are archived here for transparency but are not reported in the
+manuscript.
 
 Script: `gene_level_analysis/scripts/burden_samemethod_benchmark.py` (seed 42, B = 1000).
 It writes to `figures_tables/burden_samemethod_benchmark/`; this folder archives those outputs.
@@ -17,8 +23,8 @@ Run `external_validation/genie_bpc_validation.py` first.
 ## Arms (all genomic-only)
 * `compact_fixed`: the published compact score (`compact_score/compact_score_formula.yaml`)
 * `burden_only`: univariable Cox on `PW_HIT_COUNT` (All-pathway alteration count), fitted on MSK train
-* `pathway_EN_capK` / `pathway_EN_free`: Elastic-Net Cox on the pathway candidate pool, at most K_c terms / uncapped
-* `gene_EN_capK` / `gene_EN_free`: the same Elastic-Net Cox routine on gene × alteration indicators
+* `pathway_EN_capK` / `pathway_EN_free` (not reported): Elastic-Net Cox on the pathway candidate pool, at most K_c terms / uncapped
+* `gene_EN_capK` / `gene_EN_free` (not reported): the same Elastic-Net Cox routine on gene × alteration indicators
 
 Every model (scaler, coefficients, candidate columns, penalty) is fixed on MSK train and applied unchanged to the
 MSK held-out split and to GENIE BPC (no refit, no re-standardization).

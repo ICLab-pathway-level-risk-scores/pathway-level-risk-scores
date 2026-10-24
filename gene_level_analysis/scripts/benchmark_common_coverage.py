@@ -16,7 +16,7 @@ needed. The compact pathway score arm is unchanged.
 Outputs (overwrite; originals backed up to *.prepanel.csv):
   figures_tables/gene_vs_pathway_external/benchmark_bootstrap_table.csv   (Table 3.6)
   figures_tables/gene_vs_pathway_external/combined_internal_external.csv   (Figure 3.6)
-  figures_tables/gene_vs_pathway_external/panel_coverage_harmonization.csv (Table S11)
+  figures_tables/gene_vs_pathway_external/panel_coverage_harmonization.csv (coverage summary; not reported in the manuscript)
 """
 from __future__ import annotations
 from pathlib import Path
