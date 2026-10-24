@@ -101,7 +101,7 @@ Run order for the external and benchmark analyses:
 ```
 python3 external_validation/genie_bpc_validation.py               # Table 3, Figure 5 inputs
 python3 gene_level_analysis/scripts/benchmark_common_coverage.py  # Table 2
-python3 gene_level_analysis/scripts/burden_samemethod_benchmark.py  # Supp Table S11
+python3 gene_level_analysis/scripts/burden_only_benchmark.py       # Supp Table S11
 ```
 
 ---
