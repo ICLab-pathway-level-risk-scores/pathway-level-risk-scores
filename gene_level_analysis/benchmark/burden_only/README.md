@@ -1,4 +1,4 @@
-# Burden-only benchmark (Supplementary Table S10)
+# Burden-only benchmark (Supplementary Table S9)
 
 Script: `gene_level_analysis/scripts/burden_only_benchmark.py` (seed 42, B = 1000).
 It writes to `figures_tables/burden_only_benchmark/`; this folder archives those outputs.
