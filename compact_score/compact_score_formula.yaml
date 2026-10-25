@@ -36,7 +36,7 @@
 #                         a historical code convention and does NOT mean this
 #                         feature is per-pathway; it is a single integer per
 #                         patient summarizing how many of the retained pathways
-#                         are altered. Paper Methods, Supplementary Table S2
+#                         are altered. Paper Methods, Supplementary Table S4
 #                         display name, and ibcga_run_records/ CSVs use the
 #                         reader-friendly form "All-pathway alteration count" /
 #                         "All_Pathway_Alteration_Count" for this same feature.

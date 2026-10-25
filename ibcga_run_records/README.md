@@ -5,7 +5,7 @@ per cancer, plus aggregate selection-frequency statistics and the final
 compact feature-selection decision used to assemble the deployed
 compact pathway score (`../compact_score/compact_score_formula.yaml`).
 
-Numerical values follow **Supplementary Table S2**.
+Numerical values follow **Supplementary Table S4**.
 
 ## Files
 
@@ -13,12 +13,12 @@ Numerical values follow **Supplementary Table S2**.
 |---|---|
 | `<cancer>_30run_selected_features.csv` | Per-run selected features (one per cancer; 5 cancers) |
 | `cv_cindex_by_run.csv` | Per-(cancer, run) cross-validated Cox C-index |
-| `feature_selection_frequency_summary.csv` | Aggregate selection statistics; mirrors Supplementary Table S2 |
+| `feature_selection_frequency_summary.csv` | Aggregate selection statistics; mirrors Supplementary Table S4 |
 | `final_feature_selection_decision.csv` | Final compact features per cancer; matches the deployed YAML |
 
 ## Naming convention
 
-The reader-friendly form `"All-pathway alteration count"` (paper / Table S2
+The reader-friendly form `"All-pathway alteration count"` (paper / Table S4
 / CSV `feature_name_display`) corresponds to the code-level identifier
 `PW_HIT_COUNT` (YAML, scripts). The `PW_` prefix on this global feature
 is a historical code convention; it does not mean per-pathway.
@@ -31,14 +31,14 @@ composite}` in paper form and `PW_<Pathway>_{amp_hit / del_hit / sv_hit
 `feature_selection_frequency_summary.csv` columns: `cancer`, `rank`,
 `feature_name_paper`, `feature_name_display`, `selected_runs_of_30`,
 `selection_frequency`, `mean_main_effect`. The bookkeeping columns
-that earlier mirrored Supplementary Table S2's "Mean |main effect|",
+that earlier mirrored Supplementary Table S4's "Mean |main effect|",
 "Sign stability", the per-run `pr_list`, and the redundant
 `feature_name_internal` (still resolvable from `feature_name_display`
 via the `<Pathway>_{amp_hit/del_hit/sv_hit/mut_rate_z/any_rate_z/zsum}`
 convention plus the `PW_` prefix) have been removed to match the
 published table layout. `mean_main_effect` is reported as a magnitude
 (non-negative) so the column matches the "Mean main effect" values
-printed in Supplementary Table S2.
+printed in Supplementary Table S4.
 
 `<cancer>_30run_selected_features.csv` columns: `run_id`, `cancer`,
 `rank_in_run`, `feature_name_display`, `feature_name_internal`,

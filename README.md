@@ -35,7 +35,7 @@ ibcga_run_records/
     <cancer>_30run_selected_features.csv    # per-run selected features
     cv_cindex_by_run.csv                    # per-run cross-validated C-index
     feature_selection_frequency_summary.csv # aggregate selection statistics
-                                            # (mirrors Supplementary Table S2)
+                                            # (mirrors Supplementary Table S4)
     final_feature_selection_decision.csv    # final compact features per cancer
     README.md
 
@@ -48,16 +48,16 @@ external_validation/
     genie_bpc_validation.py         # GENIE BPC no-refit external Cox (Table 3, Figure 5)
     zscore_params/                  # MSK-derived μ/σ per cancer
     scripts/
-        external_combined_figures.py    # external calibration (Supp Figure S11), HR forest
-        genie_bpc_sensitivity_cox.py    # Supp Table S4 (OS-anchor sensitivity)
+        external_combined_figures.py    # external calibration (Supp Figure S5), HR forest
+        genie_bpc_sensitivity_cox.py    # Supp Table S2 (OS-anchor sensitivity)
         figure_style.py                 # shared matplotlib styling
     build_3flag_enhanced.py         # import shim → preprocessing/build_pathway_features.py
     README.md
 
 gene_level_analysis/
     scripts/                        # gene- vs pathway-level benchmark (Table 2, Figure 2),
-                                    # Supp Table S10, constituent-gene decomposition (Figure 4)
-    benchmark/                      # benchmark outputs (incl. Supp Table S10)
+                                    # Supp Table S9, constituent-gene decomposition (Figure 4)
+    benchmark/                      # benchmark outputs (incl. Supp Table S9)
     decomposition/                  # Figure 4 outputs
     README.md
 
@@ -65,8 +65,8 @@ KaplanMeier_plot/
     5feature_km.py                  # risk-stratified Kaplan–Meier curves
 
 decision_curve_analysis/
-    clinical_utility_5features.py   # Supp Figure S3 (decision curves)
-    run_clinical_simulation.py      # Supp Table S6, Figure S13 (trial enrichment, MDT referral,
+    clinical_utility_5features.py   # Supp Figure S9 (decision curves)
+    run_clinical_simulation.py      # Supp Table S7, Figure S13 (trial enrichment, MDT referral,
                                     # fixed-cutoff drift)
     README.md
 ```
@@ -101,7 +101,7 @@ Run order for the external and benchmark analyses:
 ```
 python3 external_validation/genie_bpc_validation.py               # Table 3, Figure 5 inputs
 python3 gene_level_analysis/scripts/benchmark_common_coverage.py  # Table 2
-python3 gene_level_analysis/scripts/burden_only_benchmark.py       # Supp Table S10
+python3 gene_level_analysis/scripts/burden_only_benchmark.py       # Supp Table S9
 ```
 
 ---

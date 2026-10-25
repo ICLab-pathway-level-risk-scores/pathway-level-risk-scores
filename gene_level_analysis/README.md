@@ -22,7 +22,7 @@ gene_level_analysis/
 |---|---|
 | Figure 2a internal C-index, parsimony–performance | `benchmark/internal/` |
 | Figure 2b, Table 2 internal-to-external transfer; Figure 2c paired ΔC (`paired_delta_compact_vs_gene.csv`) | `benchmark/external/` |
-| Supp Table S10 burden-only benchmark | `benchmark/burden_only/` |
+| Supp Table S9 burden-only benchmark | `benchmark/burden_only/` |
 | Figure 4 constituent-gene decomposition | `decomposition/` |
 
 All arms are evaluated on the same fixed 8:2 split (`random_state=42`, stratified
