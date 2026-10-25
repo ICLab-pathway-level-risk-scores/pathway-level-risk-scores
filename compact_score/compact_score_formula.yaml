@@ -5,7 +5,7 @@
 # and are applied without refitting or rescaling to internal MSK test sets
 # and the institutionally independent GENIE BPC external cohorts.
 #
-# Score definition (paper "compact pathway score" / Supp Table S4)
+# Score definition (paper "compact pathway score" / Supp Table S3)
 #   score(s)            = exp( sum_k ( beta_k * x_k(s) ) )      # = "partial hazard"
 #   risk_group(s)       = 1 if score(s) > msk_partial_hazard_cutoff[cancer]
 #                         else 0

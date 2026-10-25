@@ -56,8 +56,8 @@ external_validation/
 
 gene_level_analysis/
     scripts/                        # gene- vs pathway-level benchmark (Table 2, Figure 2),
-                                    # Supp Table S11, constituent-gene decomposition (Figure 4)
-    benchmark/                      # benchmark outputs (incl. Supp Table S11)
+                                    # Supp Table S10, constituent-gene decomposition (Figure 4)
+    benchmark/                      # benchmark outputs (incl. Supp Table S10)
     decomposition/                  # Figure 4 outputs
     README.md
 
@@ -66,7 +66,7 @@ KaplanMeier_plot/
 
 decision_curve_analysis/
     clinical_utility_5features.py   # Supp Figure S3 (decision curves)
-    run_clinical_simulation.py      # Supp Table S7, Figure S13 (trial enrichment, MDT referral,
+    run_clinical_simulation.py      # Supp Table S6, Figure S13 (trial enrichment, MDT referral,
                                     # fixed-cutoff drift)
     README.md
 ```
@@ -101,7 +101,7 @@ Run order for the external and benchmark analyses:
 ```
 python3 external_validation/genie_bpc_validation.py               # Table 3, Figure 5 inputs
 python3 gene_level_analysis/scripts/benchmark_common_coverage.py  # Table 2
-python3 gene_level_analysis/scripts/burden_only_benchmark.py       # Supp Table S11
+python3 gene_level_analysis/scripts/burden_only_benchmark.py       # Supp Table S10
 ```
 
 ---

@@ -2,7 +2,7 @@
 """
 burden_only_benchmark.py
 ========================
-Burden-only comparator (Supplementary Table S11).
+Burden-only comparator (Supplementary Table S10).
 
 Does the 4-5-feature compact score carry information beyond the overall pathway-alteration
 burden?  Arm "burden_only" = Cox on PW_HIT_COUNT (All-pathway alteration count) alone, fitted
@@ -13,7 +13,7 @@ and to the GENIE BPC external cohorts.  Point estimates are observed full-cohort
 paired differences; 95% CIs are percentiles of 1,000 paired patient-level bootstrap resamples.
 
 The bootstrap random-number stream (seed 42) is advanced exactly as in the original run, which
-also evaluated comparators that are not reported, so the archived Supplementary Table S11
+also evaluated comparators that are not reported, so the archived Supplementary Table S10
 values are reproduced exactly.
 
 Outputs (figures_tables/burden_only_benchmark/):

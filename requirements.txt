@@ -1,5 +1,5 @@
 # Python environment used to run the scripts in this repository and to verify the
-# reported external-validation features, Table 2 and Supplementary Table S11.
+# reported external-validation features, Table 2 and Supplementary Table S10.
 # Python 3.13.6
 numpy==2.2.1
 pandas==2.2.3
