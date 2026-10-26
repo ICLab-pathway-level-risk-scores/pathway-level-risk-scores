@@ -67,6 +67,8 @@ def evaluable(col, mut_genes, cna_genes):
 
 
 def boot_ci(t, e, risk, rng):
+    """Observed C-index in the full cohort with a 95% percentile bootstrap CI."""
+    obs = concordance_index(t, -risk, e)
     n = len(t); vals = []
     for _ in range(B):
         bi = rng.integers(0, n, n)
@@ -74,7 +76,7 @@ def boot_ci(t, e, risk, rng):
             continue
         vals.append(concordance_index(t[bi], -risk[bi], e[bi]))
     v = np.array(vals)
-    return float(v.mean()), float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))
+    return float(obs), float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))
 
 
 def main():
@@ -145,10 +147,11 @@ def main():
                 continue
             d.append(concordance_index(ti[bi], -rc[bi], ei[bi]) - concordance_index(ti[bi], -rg[bi], ei[bi]))
         d = np.array(d)
+        d_obs = (concordance_index(ti, -rc, ei) - concordance_index(ti, -rg, ei))
         paired_rows.append({"Cancer": DISP[cancer],
-                            "Paired ΔC (compact − matched-size gene)": f"{d.mean():+.3f} "
+                            "Paired ΔC (compact − matched-size gene)": f"{d_obs:+.3f} "
                             f"({np.percentile(d, 2.5):+.3f}, {np.percentile(d, 97.5):+.3f})"})
-        print(f"{DISP[cancer]:5} paired ΔC (compact-gene) = {d.mean():+.3f}", flush=True)
+        print(f"{DISP[cancer]:5} paired ΔC (compact-gene) = {d_obs:+.3f}", flush=True)
 
     # back up originals once, then overwrite
     for name in ("benchmark_bootstrap_table.csv", "combined_internal_external.csv"):

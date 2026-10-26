@@ -16,13 +16,13 @@ gene-level and pathway-level models to the GENIE BPC cohorts.
 
 ## Results (`external_metrics.csv`, `external_bootstrap_deltaC.csv`, `combined_internal_external.csv`)
 
-| Cancer | compact external C | best gene external C | external result |
+| Cancer | compact external C | gene-level external C (matched / expanded) | external result |
 |---|---|---|---|
-| BRCA | 0.625 | gene(=K) 0.681, gene(pw) 0.669 | gene-level higher (incl. matched K, p<0.001) |
-| LUAD | 0.612 | ~0.62–0.63 | comparable |
-| PAAD | 0.574 | ~0.58 | comparable |
-| PRAD | 0.629 | gene(pw) 0.645 | comparable |
-| CRC | 0.505 | gene ~0.61 | gene-level higher (p<0.001) |
+| BRCA | 0.625 | 0.681 / 0.669 | gene-level higher |
+| LUAD | 0.611 | 0.611 / 0.623 | comparable |
+| PAAD | 0.574 | 0.564 / 0.577 | comparable |
+| PRAD | 0.629 | 0.614 / 0.640 | comparable |
+| CRC | 0.505 | 0.500 / 0.606 | expanded gene-level higher |
 
 External validation does not support a "gene-level is worse" reading: gene-level is
 higher in BRCA and CRC, comparable elsewhere. The project therefore adopts a
